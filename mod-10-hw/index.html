@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Module 10 HW</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>OUTPUT USERS</h1>
+    <div class="data-wrapper">
+      <!-- all users -->
+      <div class="all-users parent">
+        <button class="js-get-all">Get all users</button>
+      </div>
+
+      <!-- user by ID -->
+      <div class="user-by-id parent">
+        <input class="js-user-id" type="text" class="js-by-id" placeholder="TYPE HERE USER ID" />
+        <button class="js-user-by-id">get user by id</button>
+      </div>
+
+      <!-- new user -->
+      <div class="new-user parent"> 
+          <input class="js-new-name" type="text" placeholder="ENTER NAME">
+          <input class="js-new-age" type="text" placeholder="ENTER AGE"> 
+        <button class="js-new-user">ADD NEW</button>
+      </div>
+
+      <!-- remove user -->
+      <div class="removed-user parent">
+        <input class="js-delete-id" type="text" class="js-by-id" placeholder="TYPE HERE USER ID" /> 
+        <button class="js-delete-user">remove user</button>
+      </div>
+
+      <!-- updated user -->
+      <div class="updated-user parent">
+        <input class="js-upd-id" type="text" class="js-by-id" placeholder="  ID" /> 
+        <input class="js-upd-name" type="text" placeholder="  NAME">
+        <input class="js-upd-age" type="text" placeholder="  AGE"> 
+          <button class="js-update">updated users</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
