@@ -12,8 +12,8 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   if (input.value === "" || input.value === "http://")
     return alert("Input correct URL");
-
-  const arrLinks = [...JSON.parse(localStorage.getItem("links"))];
+  let arrLinks = [];
+  if(localStorage.getItem("links")) arrLinks = [...JSON.parse(localStorage.getItem("links"))];
   if (arrLinks.includes(input.value)) return alert("This links already exist");
 
   const URL = `http://api.linkpreview.net/?key=${key}&q=${input.value}`;
