@@ -63,9 +63,7 @@ form.addEventListener("input", e => {
 
 // default show
 window.addEventListener("DOMContentLoaded", () => {
-  JSON.parse(localStorage.getItem("links")).map(
-    elem => (list.innerHTML += createLi(elem))
-  );
+  if(localStorage.getItem("links")) JSON.parse(localStorage.getItem("links")).map(elem => (list.innerHTML += createLi(elem)) );
 });
 
 // html element
