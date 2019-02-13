@@ -16,7 +16,7 @@ form.addEventListener("submit", e => {
   if(localStorage.getItem("links")) arrLinks = [...JSON.parse(localStorage.getItem("links"))];
   if (arrLinks.includes(input.value)) return alert("This links already exist");
 
-  const URL = `http://api.linkpreview.net/?key=${key}&q=${input.value}`;
+  const URL = `https://api.linkpreview.net/?key=${key}&q=${input.value}`;
   fetch(URL)
     .then(resp => resp.json())
     .then(data => {
