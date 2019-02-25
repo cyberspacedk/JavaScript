@@ -12,11 +12,11 @@ form.addEventListener("submit", e => {
   e.preventDefault();
   if (input.value === "" || input.value === "http://")
     return alert("Input correct URL");
-
-  const arrLinks = [...JSON.parse(localStorage.getItem("links"))];
+  let arrLinks = [];
+  if(localStorage.getItem("links")) arrLinks = [...JSON.parse(localStorage.getItem("links"))];
   if (arrLinks.includes(input.value)) return alert("This links already exist");
 
-  const URL = `http://api.linkpreview.net/?key=${key}&q=${input.value}`;
+  const URL = `https://api.linkpreview.net/?key=${key}&q=${input.value}`;
   fetch(URL)
     .then(resp => resp.json())
     .then(data => {
@@ -63,9 +63,7 @@ form.addEventListener("input", e => {
 
 // default show
 window.addEventListener("DOMContentLoaded", () => {
-  JSON.parse(localStorage.getItem("links")).map(
-    elem => (list.innerHTML += createLi(elem))
-  );
+  if(localStorage.getItem("links")) JSON.parse(localStorage.getItem("links")).map(elem => (list.innerHTML += createLi(elem)) );
 });
 
 // html element
